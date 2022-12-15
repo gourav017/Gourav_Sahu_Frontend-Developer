@@ -1,10 +1,13 @@
 import React from 'react'
-import style from "../components/landing.module.css"
 import Banner from './Banner'
+import { Heading } from '@chakra-ui/react'
+import Searchbar from './Searchbar'
 const LandingPage = () => {
   return (
    <>
-    <Banner/>
+     <Heading bg="black" textAlign="center" color="white">SpaceX</Heading>
+
+    <Searchbar/>
    </>
   )
 }

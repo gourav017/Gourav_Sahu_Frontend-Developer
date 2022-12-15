@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Calendar from "react-calendar";
+import Datagrid from "./Datagrid";
 const Searchbar = () => {
   const [data, setdata] = useState([]);
   const [valuee, onChange] = useState(new Date());
 
   useEffect(() => {
     capsulesData();
-
   }, []);
-  
+
 
   let capsulesData = async () => {
     return await axios
@@ -36,12 +36,10 @@ const Searchbar = () => {
       .get(`https://api.spacexdata.com/v3/capsules?type=${value}`)
       .then((res) => setdata(res.data));
   };
-  console.log(valuee.toISOString());
 
-  console.log(data);
 
   return (
-    <div>
+    <div className="searchbar" >
       Searchbar
       <select onChange={handleSearchbyStatus}>
         <option value="">Filter by capsule status</option>
@@ -62,6 +60,7 @@ const Searchbar = () => {
           <option value="Dragon 2.0">Dragon 2.0</option>
         </select>
       </div>
+      <Datagrid data={data} />
     </div>
   );
 };
