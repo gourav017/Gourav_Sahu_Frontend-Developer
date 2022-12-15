@@ -1,5 +1,4 @@
 import React from "react";
-import Banner from "./Banner";
 import { Heading } from "@chakra-ui/react";
 import Searchbar from "./Searchbar";
 const LandingPage = () => {

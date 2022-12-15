@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Calendar from "react-calendar";
 import Datagrid from "./Datagrid";
+import { Heading, Select } from "@chakra-ui/react";
 const Searchbar = () => {
   const [data, setdata] = useState([]);
   const [valuee, onChange] = useState(new Date());
@@ -38,26 +39,45 @@ const Searchbar = () => {
 
   return (
     <div className="searchbar">
-      Searchbar
-      <select onChange={handleSearchbyStatus}>
-        <option value="">Filter by capsule status</option>
+      <Select
+        bg="tomato"
+        borderColor="tomato"
+        color="black"
+        placeholder="Filter by capsule status"
+        w="50%"
+        onChange={handleSearchbyStatus}
+      >
         <option value="active">active</option>
         <option value="retired">retired</option>
         <option value="unknown">unknown</option>
         <option value="destroyed">destroyed</option>
-      </select>
-      <div style={{ width: "50%" }}>
-        filter by original_launch
-        <Calendar onChange={onChange} value={valuee} calendarType="ISO 8601" />
-      </div>
+      </Select>
+  
+      <br />
       <div>
-        <select onChange={handlebyType}>
-          <option value="">Filter by capsule type</option>
+        <Heading as="h4" size="md" color="black.400">
+          filter by original_launch
+          <br />
+          <Calendar
+            onChange={onChange}
+            value={valuee}
+            calendarType="ISO 8601"
+          />
+        </Heading>
+      </div>
+    <br />
+      <div>
+        <Select   bg="tomato"
+        borderColor="tomato"
+        color="black"
+        placeholder="Filter by capsule type"
+        w="50%" onChange={handlebyType}>
           <option value="Dragon 1.0">Dragon 1.0</option>
           <option value="Dragon 1.1">Dragon 1.1</option>
           <option value="Dragon 2.0">Dragon 2.0</option>
-        </select>
+        </Select>
       </div>
+    <br />
       <Datagrid data={data} />
     </div>
   );
