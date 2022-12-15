@@ -10,7 +10,6 @@ const Searchbar = () => {
     capsulesData();
   }, []);
 
-
   let capsulesData = async () => {
     return await axios
       .get("https://api.spacexdata.com/v3/capsules")
@@ -37,9 +36,8 @@ const Searchbar = () => {
       .then((res) => setdata(res.data));
   };
 
-
   return (
-    <div className="searchbar" >
+    <div className="searchbar">
       Searchbar
       <select onChange={handleSearchbyStatus}>
         <option value="">Filter by capsule status</option>

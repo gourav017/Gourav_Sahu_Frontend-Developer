@@ -1,15 +1,17 @@
-import React from 'react'
-import Banner from './Banner'
-import { Heading } from '@chakra-ui/react'
-import Searchbar from './Searchbar'
+import React from "react";
+import Banner from "./Banner";
+import { Heading } from "@chakra-ui/react";
+import Searchbar from "./Searchbar";
 const LandingPage = () => {
   return (
-   <>
-     <Heading bg="black" textAlign="center" color="white">SpaceX</Heading>
+    <>
+      <Heading bg="black" textAlign="center" color="white">
+        SpaceX
+      </Heading>
 
-    <Searchbar/>
-   </>
-  )
-}
+      <Searchbar />
+    </>
+  );
+};
 
-export default LandingPage
+export default LandingPage;
